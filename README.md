@@ -1,2 +1,2 @@
-# CS50.-May_2020
+# CS50
 project 'Finance' from CS50.
