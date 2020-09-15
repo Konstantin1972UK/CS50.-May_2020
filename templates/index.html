@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">My list</h1>
+    
+    <table style="width: 1000px", cols = "5">
+        <thead>
+            <tr>
+                <td>Symbol</td>
+                <td>Name</td>
+                <td>Shares</td>
+                <td>Price</td>
+                <td>TOTAL</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{user_shares}}</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item['symbol'] }}</td>
+                <td>{{ item['name']   }}</td>
+                <td>{{ item['share']  }}</td>
+                <td>{{ item['price']  }}</td>
+                <td>{{ item['total']  }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                    <td colspan="4">CASH</td>
+                    <td>{{user_cash}}</td>
+            </tr>
+           
+        </tbody>   
+        
+    </table>
+    
+
+    
+
+{% endblock %}
